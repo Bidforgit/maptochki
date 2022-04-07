@@ -1,15 +1,26 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
-        <script src="https://api-maps.yandex.ru/2.1/?apikey=ce305de9-c35b-4de0-be68-0b6cd4b77af6&lang=ru_RU"
-        type="text/javascript">
-        </script>
+        <script src="https://api-maps.yandex.ru/2.1/?apikey=ce305de9-c35b-4de0-be68-0b6cd4b77af6&load=Map&lang=ru_RU"
+ type="text/javascript"></script>
+<script type="text/javascript">
+  ymaps.ready(function () {  
+    var map = new ymaps.Map("map", {
+      center: [49.807760, 73.088504], 
+      zoom: 10
+    });
+
+    if (map) {
+      ymaps.modules.require(['Placemark', 'Circle'], function (Placemark, Circle) {
+        var placemark = new Placemark([49.807760, 73.088504]);
+      });
+    }
+  });
+</script>
       </head>
-
-        
-        
-
     <body>
-       
+        
+        <div id="YMapsID" style="width: 450px; height: 350px;"></div>
+        
     </body>
 </html>
